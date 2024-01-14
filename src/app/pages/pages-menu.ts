@@ -2,23 +2,32 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'E-commerce',
-    icon: 'shopping-cart-outline',
+    title: 'Dashboard',
+    icon: 'layout-outline',
     link: '/pages/dashboard',
     home: true,
   },
   {
-    title: 'IoT Dashboard',
-    icon: 'home-outline',
-    link: '/pages/iot-dashboard',
-  },
-  {
-    title: 'FEATURES',
+    title: 'CONTACTS',
     group: true,
   },
   {
-    title: 'Layout',
-    icon: 'layout-outline',
+    title: 'Companies',
+    icon: 'briefcase-outline',
+    link: '/pages/companies',
+  },
+  {
+    title: 'Contacts',
+    icon: 'people-outline',
+    link: '/pages/iot-dashboard',
+  },
+  {
+    title: 'ENERGY',
+    group: true,
+  },
+  {
+    title: 'Electricity',
+    icon: 'flash-outline',
     children: [
       {
         title: 'Stepper',
@@ -44,8 +53,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Forms',
-    icon: 'edit-2-outline',
+    title: 'Gas',
+    icon: 'sun-outline',
     children: [
       {
         title: 'Form Inputs',
@@ -66,7 +75,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'UI Features',
+    title: 'Carbon',
     icon: 'keypad-outline',
     link: '/pages/ui-features',
     children: [
@@ -87,6 +96,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/ui-features/search-fields',
       },
     ],
+  },
+  {
+    title: 'OTHERS',
+    group: true,
   },
   {
     title: 'Modal & Overlays',

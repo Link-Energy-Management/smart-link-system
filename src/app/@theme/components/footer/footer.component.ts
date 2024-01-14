@@ -5,13 +5,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
   template: `
     <span class="created-by">
-      Created with ♥ by <b><a href="https://akveo.page.link/8V2f" target="_blank">Akveo</a></b> 2019
+    <small>COPYRIGHT © 2024 LINK ENERGY MANAGEMENT SERVICES - ALL RIGHTS RESERVED.</small>
     </span>
     <div class="socials">
-      <a href="#" target="_blank" class="ion ion-social-github"></a>
-      <a href="#" target="_blank" class="ion ion-social-facebook"></a>
-      <a href="#" target="_blank" class="ion ion-social-twitter"></a>
-      <a href="#" target="_blank" class="ion ion-social-linkedin"></a>
+      <a href="https://www.facebook.com/" target="_blank" class="ion ion-social-facebook"></a>
+      <a href="https://www.x.com/" target="_blank" class="ion ion-social-twitter"></a>
+      <a href="https://linkedin.com/" target="_blank" class="link-icon ion-social-linkedin"></a>
+      <a href="https://linkenergymanagement.com/" target="_blank">
+        <nb-icon icon="globe-outline" pack="eva"></nb-icon>
+      </a>
     </div>
   `,
 })
