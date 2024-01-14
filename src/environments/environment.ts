@@ -10,6 +10,7 @@
 
 export const environment = {
   production: false,
+  useEmulators: true,
   firebaseConfig: {
     apiKey: "AIzaSyAGvg7fI3F7DFUZ3qtgk6QnwMsHJipEGYM",
     authDomain: "smart-link-system.firebaseapp.com",

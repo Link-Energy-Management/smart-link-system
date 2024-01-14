@@ -4,13 +4,9 @@ import { NbAuthComponent, NbLoginComponent, NbRegisterComponent, NbLogoutCompone
 
 const routes: Routes = [
   {
-    path: 'auth',
+    path: '',
     component: NbAuthComponent,
     children: [
-      {
-        path: '',
-        component: NbLoginComponent,
-      },
       {
         path: 'login',
         component: NbLoginComponent,
@@ -31,7 +27,15 @@ const routes: Routes = [
         path: 'reset-password',
         component: NbResetPasswordComponent,
       },
+      {
+        path: '**',
+        redirectTo: 'login',
+      }
     ],
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
   }
 ];
 
