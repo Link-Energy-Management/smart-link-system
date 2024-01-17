@@ -17,6 +17,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userPictureOnly: boolean = false;
   user: any;
 
+  showNotifications: boolean = false;
+
+  items = [
+    { title: 'Profile' },
+    { title: 'Log out' },
+  ];
+
+
+  toggleNotifications() {
+    this.showNotifications = !this.showNotifications;
+  }
+
   themes = [
     {
       value: 'default',
@@ -60,7 +72,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     this.userService.getUsers()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((users: any) => this.user = users.nick);
+      .subscribe((users: any) => this.user = users.tyler);
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()

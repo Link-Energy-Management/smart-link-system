@@ -31,11 +31,6 @@
   @include nb-overrides();
 }
 
-table,
-mat-paginator {
-  color: nb_theme(text-hint-color);
-}
-
 nb-card-header {
   display: flex;
   justify-content: space-between;

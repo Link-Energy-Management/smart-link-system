@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { NbAuthModule } from '@nebular/auth';
-import { NbFirebasePasswordStrategy } from '@nebular/firebase-auth';
+import { NbFirebaseGoogleStrategy, NbFirebasePasswordStrategy } from '@nebular/firebase-auth';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({

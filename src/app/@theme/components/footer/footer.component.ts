@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
       <a href="https://www.x.com/" target="_blank" class="ion ion-social-twitter"></a>
       <a href="https://linkedin.com/" target="_blank" class="link-icon ion-social-linkedin"></a>
       <a href="https://linkenergymanagement.com/" target="_blank">
-        <nb-icon icon="globe-outline" pack="eva"></nb-icon>
+        <nb-icon icon="globe" style="margin-bottom: 2px"></nb-icon>
       </a>
     </div>
   `,
