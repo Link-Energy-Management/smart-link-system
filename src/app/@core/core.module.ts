@@ -53,6 +53,7 @@ import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
 import { SnackbarService } from './utils/snackbar.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const socialLinks = [
   {
@@ -150,6 +151,7 @@ export const NB_CORE_PROVIDERS = [
 @NgModule({
   imports: [
     CommonModule,
+    MatSnackBarModule
   ],
   exports: [
     NbAuthModule,

@@ -6,3 +6,13 @@
 .right-content {
   width: 250px;
 }
+
+.display-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-field {
+  flex: 1;
+}

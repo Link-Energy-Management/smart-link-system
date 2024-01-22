@@ -1,11 +1,11 @@
 <div class="display-flex-container">
     <h1 mat-dialog-title class="flex-field">Account 1</h1>
-    <button mat-icon-button (click)="toggleStar()">
-        <mat-icon *ngIf="!isStarred">star_border</mat-icon>
-        <mat-icon *ngIf="isStarred">star</mat-icon>
+    <button nbButton ghost (click)="toggleStar()">
+        <nb-icon icon="star-outline" *ngIf="!isStarred"></nb-icon>
+        <nb-icon icon="star" *ngIf="isStarred"></nb-icon>
     </button>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_horiz</mat-icon>
+    <button nbButton ghost [matMenuTriggerFor]="menu">
+        <nb-icon icon="more-horizontal-outline"></nb-icon>
     </button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item>
@@ -17,220 +17,220 @@
     </mat-menu>
 </div>
 <div class="display-flex-container">
-    <a mat-button><mat-icon>business</mat-icon><span>Company Name Inc.</span></a>
+    <button nbButton ghost>
+        <nb-icon icon="briefcase"></nb-icon>
+        <span>Company Name Inc.</span>
+    </button>
     <div>Created: 01 Jan, 2024</div>
 </div>
 <div class="display-flex-container">
-    <a mat-button><mat-icon>account_circle</mat-icon><span>John Jones</span></a>
-    <mat-chip-set>
-        <mat-chip>New</mat-chip>
-        <mat-chip>Electricity</mat-chip>
-        <mat-chip>Gas</mat-chip>
-    </mat-chip-set>
+    <button nbButton ghost>
+        <nb-icon icon="person"></nb-icon>
+        <span>John Jones</span>
+    </button>
+    <nb-tag-list>
+        <nb-tag status="primary" appearance="filled" text="new"></nb-tag>
+        <nb-tag status="primary" appearance="filled" text="electricity"></nb-tag>
+        <nb-tag status="primary" appearance="filled" text="gas"></nb-tag>
+    </nb-tag-list>
 </div>
 <br>
-<mat-tab-group color="accent">
-    <mat-tab label="Summary">
+<nb-tabset>
+    <nb-tab tabTitle="Summary">
         <div class="content-margin-10 inline-flex-container">
             <div class="flex-field">
-                <mat-card>
-                    <mat-card-header>
-                        <mat-card-title>Revenue</mat-card-title>
-                        <mat-card-subtitle>Monthly | Year to date</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>
-                    </mat-card-content>
-                </mat-card>
+                <nb-card>
+                    <nb-card-header>
+                        Revenue
+                    </nb-card-header>
+                    <nb-card-body>
+                    </nb-card-body>
+                </nb-card>
                 <br>
-                <mat-card>
-                    <mat-card-header>
-                        <mat-card-title>Cost Savings</mat-card-title>
-                        <mat-card-subtitle>Year to date</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>
-                    </mat-card-content>
-                </mat-card>
+                <nb-card>
+                    <nb-card-header>
+                        Cost Savings
+                    </nb-card-header>
+                    <nb-card-body>
+                    </nb-card-body>
+                </nb-card>
                 <br>
-                <mat-card>
-                    <mat-card-header>
-                        <mat-card-title>Energy Use</mat-card-title>
-                        <mat-card-subtitle>Year to date</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>
-                    </mat-card-content>
-                </mat-card>
+                <nb-card>
+                    <nb-card-header>
+                        Energy Use
+                    </nb-card-header>
+                    <nb-card-body>
+                    </nb-card-body>
+                </nb-card>
             </div>
             &nbsp;
             &nbsp;
             &nbsp;
             <div class="right-content">
-                <mat-card style="height: 500px;">
-                    <mat-card-header>
-                        <mat-card-title>Notes</mat-card-title>
+                <nb-card style="height: 500px;">
+                    <nb-card-header>
+                        Notes
                         <div class="spacer"></div>
-                        <button mat-icon-button>
-                            <mat-icon>add</mat-icon>
+                        <button nbButton>
+                            <nb-icon icon="plus"></nb-icon>
                         </button>
-                    </mat-card-header>
-                    <mat-card-content style="overflow-y: auto;">
-                        <mat-card class="card-item">
-                            <mat-card-content>Company Name Inc. has been a reliable client for the past few years,
+                    </nb-card-header>
+                    <nb-card-body style="overflow-y: auto;">
+                        <nb-card class="card-item">
+                            <nb-card-body>Company Name Inc. has been a reliable client for the past few years,
                                 consistently engaging with our products and services. They have shown a strong interest
                                 in our latest offerings, particularly in the areas of analytics and potential growth
-                                opportunities.</mat-card-content>
-                        </mat-card>
+                                opportunities.</nb-card-body>
+                        </nb-card>
                         <br>
-                        <mat-card class="card-item">
-                            <mat-card-content>Company Name Inc. has been a reliable client for the past few years,
+                        <nb-card class="card-item">
+                            <nb-card-body>Company Name Inc. has been a reliable client for the past few years,
                                 consistently engaging with our products and services. They have shown a strong interest
                                 in our latest offerings, particularly in the areas of analytics and potential growth
-                                opportunities.</mat-card-content>
-                        </mat-card>
-                    </mat-card-content>
-                </mat-card>
+                                opportunities.</nb-card-body>
+                        </nb-card>
+                    </nb-card-body>
+                </nb-card>
                 <br>
-                <mat-card style="height: 500px;">
-                    <mat-card-header>
-                        <mat-card-title>Emails Sent</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content style="overflow-y: auto;">
+                <nb-card style="height: 500px;">
+                    <nb-card-header>
+                        Emails Sent
+                    </nb-card-header>
+                    <nb-card-body style="overflow-y: auto;">
                         <br>
-                        <mat-card class="card-item">
-                            <mat-card-content style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
+                        <nb-card class="card-item">
+                            <nb-card-body style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
                                 <span>To: sales@companyname.com</span><br>
                                 <span>From: noreply@sls.com</span><br>
                                 <span>Subject: Power Statement (01/2024)</span><br>
                                 <span>Message: Attached below is your...</span>
-                            </mat-card-content>
-                        </mat-card>
+                            </nb-card-body>
+                        </nb-card>
                         <br>
-                        <mat-card class="card-item">
-                            <mat-card-content style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
+                        <nb-card class="card-item">
+                            <nb-card-body style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
                                 <span>To: sales@companyname.com</span><br>
                                 <span>From: noreply@sls.com</span><br>
                                 <span>Subject: Power Statement (01/2024)</span><br>
                                 <span>Message: Attached below is your...</span>
-                            </mat-card-content>
-                        </mat-card>
+                            </nb-card-body>
+                        </nb-card>
                         <br>
-                        <mat-card class="card-item">
-                            <mat-card-content style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
+                        <nb-card class="card-item">
+                            <nb-card-body style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
                                 <span>To: sales@companyname.com</span><br>
                                 <span>From: noreply@sls.com</span><br>
                                 <span>Subject: Power Statement (01/2024)</span><br>
                                 <span>Message: Attached below is your...</span>
-                            </mat-card-content>
-                        </mat-card>
+                            </nb-card-body>
+                        </nb-card>
                         <br>
-                        <mat-card class="card-item">
-                            <mat-card-content style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
+                        <nb-card class="card-item">
+                            <nb-card-body style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
                                 <span>To: sales@companyname.com</span><br>
                                 <span>From: noreply@sls.com</span><br>
                                 <span>Subject: Power Statement (01/2024)</span><br>
                                 <span>Message: Attached below is your...</span>
-                            </mat-card-content>
-                        </mat-card>
+                            </nb-card-body>
+                        </nb-card>
                         <br>
-                        <mat-card class="card-item">
-                            <mat-card-content style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
+                        <nb-card class="card-item">
+                            <nb-card-body style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
                                 <span>To: sales@companyname.com</span><br>
                                 <span>From: noreply@sls.com</span><br>
                                 <span>Subject: Power Statement (01/2024)</span><br>
                                 <span>Message: Attached below is your...</span>
-                            </mat-card-content>
-                        </mat-card>
-                    </mat-card-content>
-                </mat-card>
+                            </nb-card-body>
+                        </nb-card>
+                    </nb-card-body>
+                </nb-card>
             </div>
         </div>
-    </mat-tab>
-    <mat-tab label="Contracts">
+    </nb-tab>
+    <nb-tab tabTitle="Contracts">
         <div class="content-margin-10">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Pending Contracts</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                </mat-card-content>
-            </mat-card>
+            <nb-card>
+                <nb-card-header>
+                    Pending Contracts
+                </nb-card-header>
+                <nb-card-body>
+                </nb-card-body>
+            </nb-card>
             <br>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Open Contracts</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                </mat-card-content>
-            </mat-card>
+            <nb-card>
+                <nb-card-header>
+                    Open Contracts
+                </nb-card-header>
+                <nb-card-body>
+                </nb-card-body>
+            </nb-card>
             <br>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Closed Contracts</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                </mat-card-content>
-            </mat-card>
+            <nb-card>
+                <nb-card-header>
+                    Closed Contracts
+                </nb-card-header>
+                <nb-card-body>
+                </nb-card-body>
+            </nb-card>
         </div>
-    </mat-tab>
-    <mat-tab label="Analytics">
+    </nb-tab>
+    <nb-tab tabTitle="Analytics">
         <div class="content-margin-10">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Forecasting</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                </mat-card-content>
-            </mat-card>
+            <nb-card>
+                <nb-card-header>
+                    Forecasting
+                </nb-card-header>
+                <nb-card-body>
+                </nb-card-body>
+            </nb-card>
             <br>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Meter Data Breakdown</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                </mat-card-content>
-            </mat-card>
+            <nb-card>
+                <nb-card-header>
+                    Meter Data Breakdown
+                </nb-card-header>
+                <nb-card-body>
+                </nb-card-body>
+            </nb-card>
             <br>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Cost Savings</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                </mat-card-content>
-            </mat-card>
+            <nb-card>
+                <nb-card-header>
+                    Cost Savings
+                </nb-card-header>
+                <nb-card-body>
+                </nb-card-body>
+            </nb-card>
         </div>
-    </mat-tab>
-    <mat-tab label="Potential">
+    </nb-tab>
+    <nb-tab tabTitle="Potential">
         <div class="content-margin-10">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Building Potential</mat-card-title>
-                    <mat-card-subtitle>Potential customers and other businesses in the same
-                        building.</mat-card-subtitle>
+            <nb-card>
+                <nb-card-header>
+                    Building Potential
                     <div class="spacer"></div>
                     <button mat-raised-button color="primary">
                         <mat-icon>add</mat-icon><span>Add Customer</span>
                     </button>
-                </mat-card-header>
+                </nb-card-header>
                 <mat-divider></mat-divider>
-                <mat-card-content>
-                </mat-card-content>
-            </mat-card>
+                <nb-card-body>
+                </nb-card-body>
+            </nb-card>
         </div>
-    </mat-tab>
-    <mat-tab label="Contacts">
+    </nb-tab>
+    <nb-tab tabTitle="Contacts">
         <div class="content-margin-10">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Company</mat-card-title>
-                    <div class="spacer"></div>
-                    <button mat-raised-button color="primary">
-                        <mat-icon>add</mat-icon><span>Add Company</span>
+            <nb-card>
+                <nb-card-header>
+                    Company
+                    <button nbButton ghost>
+                        <nb-icon icon="plus"></nb-icon><span>Add Company</span>
                     </button>
-                </mat-card-header>
+                </nb-card-header>
                 <mat-divider></mat-divider>
-                <mat-card-content>
-                    <mat-card class="card-item-full">
-                        <mat-card-header>
-                            <mat-card-title>Company Name Inc.</mat-card-title>
+                <nb-card-body>
+                    <nb-card class="card-item-full">
+                        <nb-card-header>
+                            Company Name Inc.
                             <div class="spacer"></div>
                             <button mat-icon-button [matMenuTriggerFor]="companyMenu">
                                 <mat-icon>more_horiz</mat-icon>
@@ -240,10 +240,9 @@
                                     Remove
                                 </button>
                             </mat-menu>
-                            <mat-card-subtitle>Description of Company Name Inc.</mat-card-subtitle>
-                        </mat-card-header>
+                        </nb-card-header>
                         <mat-divider></mat-divider>
-                        <mat-card-content>
+                        <nb-card-body>
                             <mat-accordion class="headers-align">
                                 <mat-expansion-panel>
                                     <mat-expansion-panel-header>
@@ -273,27 +272,26 @@
                                     </mat-list>
                                 </mat-expansion-panel>
                             </mat-accordion>
-                        </mat-card-content>
-                    </mat-card>
-                </mat-card-content>
-            </mat-card>
+                        </nb-card-body>
+                    </nb-card>
+                </nb-card-body>
+            </nb-card>
             <br>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Contacts</mat-card-title>
+            <nb-card>
+                <nb-card-header>
+                    Contacts
                     <div class="spacer"></div>
                     <button mat-raised-button color="primary">
                         <mat-icon>add</mat-icon><span>Add Contact</span>
                     </button>
-                </mat-card-header>
+                </nb-card-header>
                 <mat-divider></mat-divider>
-                <mat-card-content>
-                    <mat-card class="card-item-full">
-                        <mat-card-header>
-                            <mat-card-title>John Jones</mat-card-title>
-                            <mat-card-subtitle>Program Manager</mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-content>
+                <nb-card-body>
+                    <nb-card class="card-item-full">
+                        <nb-card-header>
+                            John Jones
+                        </nb-card-header>
+                        <nb-card-body>
                             <mat-list>
                                 <mat-list-item>
                                     <mat-icon matListItemIcon>email</mat-icon>
@@ -304,15 +302,14 @@
                                     <div matListItemTitle>(321) 345-7890</div>
                                 </mat-list-item>
                             </mat-list>
-                        </mat-card-content>
-                    </mat-card>
+                        </nb-card-body>
+                    </nb-card>
                     <br>
-                    <mat-card class="card-item-full">
-                        <mat-card-header>
-                            <mat-card-title>Sam Stark</mat-card-title>
-                            <mat-card-subtitle>Accounting Manager</mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-content>
+                    <nb-card class="card-item-full">
+                        <nb-card-header>
+                            Sam Stark
+                        </nb-card-header>
+                        <nb-card-body>
                             <mat-list>
                                 <mat-list-item>
                                     <mat-icon matListItemIcon>email</mat-icon>
@@ -323,15 +320,14 @@
                                     <div matListItemTitle>(321) 345-7890</div>
                                 </mat-list-item>
                             </mat-list>
-                        </mat-card-content>
-                    </mat-card>
+                        </nb-card-body>
+                    </nb-card>
                     <br>
-                    <mat-card class="card-item-full">
-                        <mat-card-header>
-                            <mat-card-title>Xavier Cooper</mat-card-title>
-                            <mat-card-subtitle>Manager</mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-content>
+                    <nb-card class="card-item-full">
+                        <nb-card-header>
+                            Xavier Cooper
+                        </nb-card-header>
+                        <nb-card-body>
                             <mat-list>
                                 <mat-list-item>
                                     <mat-icon matListItemIcon>email</mat-icon>
@@ -342,32 +338,32 @@
                                     <div matListItemTitle>(321) 345-7890</div>
                                 </mat-list-item>
                             </mat-list>
-                        </mat-card-content>
-                    </mat-card>
-                </mat-card-content>
-            </mat-card>
+                        </nb-card-body>
+                    </nb-card>
+                </nb-card-body>
+            </nb-card>
         </div>
-    </mat-tab>
-    <mat-tab label="Documents">
+    </nb-tab>
+    <nb-tab tabTitle="Documents">
         <div class="content-margin-10">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Agreements</mat-card-title>
+            <nb-card>
+                <nb-card-header>
+                    Agreements
                     <div class="spacer"></div>
                     <button mat-raised-button color="primary"><mat-icon>link</mat-icon><span>Link
                             Document</span></button>
-                </mat-card-header>
+                </nb-card-header>
                 <mat-divider></mat-divider>
-                <mat-card-content>
+                <nb-card-body>
                     <div class="inline-flex-container">
-                        <mat-card class="card-item">
-                            <mat-card-header>
-                                <mat-card-title>
-                                    <button mat-button>
-                                        <mat-icon>description</mat-icon>
-                                        <span>Proposal</span>
-                                    </button>
-                                </mat-card-title>
+                        <nb-card class="card-item">
+                            <nb-card-header>
+
+                                <button mat-button>
+                                    <mat-icon>description</mat-icon>
+                                    <span>Proposal</span>
+                                </button>
+
                                 <div class="spacer"></div>
                                 <button mat-icon-button [matMenuTriggerFor]="docMenu">
                                     <mat-icon>more_vert</mat-icon>
@@ -380,23 +376,20 @@
                                         <span>Delete</span>
                                     </button>
                                 </mat-menu>
-                                <mat-card-subtitle>Proposal document description, proposing the cost savings for
-                                    Company
-                                    Name Inc.</mat-card-subtitle>
-                            </mat-card-header>
-                            <mat-card-content>
-                            </mat-card-content>
-                        </mat-card>
+                            </nb-card-header>
+                            <nb-card-body>
+                            </nb-card-body>
+                        </nb-card>
                         &nbsp;
                         &nbsp;
-                        <mat-card class="card-item">
-                            <mat-card-header>
-                                <mat-card-title>
-                                    <button mat-button>
-                                        <mat-icon>description</mat-icon>
-                                        <span>Agreement 1</span>
-                                    </button>
-                                </mat-card-title>
+                        <nb-card class="card-item">
+                            <nb-card-header>
+
+                                <button mat-button>
+                                    <mat-icon>description</mat-icon>
+                                    <span>Agreement 1</span>
+                                </button>
+
                                 <div class="spacer"></div>
                                 <button mat-icon-button [matMenuTriggerFor]="docMenu">
                                     <mat-icon>more_vert</mat-icon>
@@ -409,34 +402,32 @@
                                         <span>Delete</span>
                                     </button>
                                 </mat-menu>
-                                <mat-card-subtitle>Agreement document description, Company
-                                    Name Inc. agrees to work.</mat-card-subtitle>
-                            </mat-card-header>
-                            <mat-card-content>
-                            </mat-card-content>
-                        </mat-card>
+                            </nb-card-header>
+                            <nb-card-body>
+                            </nb-card-body>
+                        </nb-card>
                     </div>
-                </mat-card-content>
-            </mat-card>
+                </nb-card-body>
+            </nb-card>
             <br>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Other</mat-card-title>
+            <nb-card>
+                <nb-card-header>
+                    Other
                     <div class="spacer"></div>
                     <button mat-raised-button color="primary"><mat-icon>link</mat-icon><span>Link
                             Document</span></button>
-                </mat-card-header>
+                </nb-card-header>
                 <mat-divider></mat-divider>
-                <mat-card-content>
+                <nb-card-body>
                     <div class="inline-flex-container">
-                        <mat-card class="card-item">
-                            <mat-card-header>
-                                <mat-card-title>
-                                    <button mat-button>
-                                        <mat-icon>description</mat-icon>
-                                        <span>Change Order</span>
-                                    </button>
-                                </mat-card-title>
+                        <nb-card class="card-item">
+                            <nb-card-header>
+
+                                <button mat-button>
+                                    <mat-icon>description</mat-icon>
+                                    <span>Change Order</span>
+                                </button>
+
                                 <div class="spacer"></div>
                                 <button mat-icon-button [matMenuTriggerFor]="docMenu">
                                     <mat-icon>more_vert</mat-icon>
@@ -449,15 +440,13 @@
                                         <span>Delete</span>
                                     </button>
                                 </mat-menu>
-                                <mat-card-subtitle>Agreement document description, Company
-                                    Name Inc. agrees to work.</mat-card-subtitle>
-                            </mat-card-header>
-                            <mat-card-content>
-                            </mat-card-content>
-                        </mat-card>
+                            </nb-card-header>
+                            <nb-card-body>
+                            </nb-card-body>
+                        </nb-card>
                     </div>
-                </mat-card-content>
-            </mat-card>
+                </nb-card-body>
+            </nb-card>
         </div>
-    </mat-tab>
-</mat-tab-group>
+    </nb-tab>
+</nb-tabset>

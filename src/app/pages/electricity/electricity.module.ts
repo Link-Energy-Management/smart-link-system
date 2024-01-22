@@ -5,7 +5,7 @@ import { ElectricityRoutingModule } from './electricity-routing.module';
 import { AccountsComponent } from './accounts/accounts.component';
 import { AccountsTableComponent } from './accounts/accounts-table/accounts-table.component';
 import { ElectricityComponent } from './electricity.component';
-import { NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbSelectModule } from '@nebular/theme';
+import { NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbSelectModule, NbTabsetModule, NbTagListComponent } from '@nebular/theme';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
+import { NbTagModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,8 @@ import { MatListModule } from '@angular/material/list';
     MatSortModule,
     NbInputModule,
     NbButtonModule,
+    NbTagModule,
+    NbTabsetModule,
 
     MatMenuModule,
     MatIconModule,
