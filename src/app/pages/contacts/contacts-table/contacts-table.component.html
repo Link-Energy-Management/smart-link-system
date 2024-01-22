@@ -1,0 +1,44 @@
+<nb-card>
+    <nb-card-header>
+        <span>Contacts</span>
+        <div class="table-filter-fields">
+            <nb-select selected="1">
+                <nb-option value="1">All</nb-option>
+                <nb-option value="2">New</nb-option>
+                <nb-option value="2">Prospects</nb-option>
+            </nb-select>
+            &nbsp;
+            <input type="text" nbInput placeholder="Search">
+            &nbsp;
+            <button nbButton ghost><nb-icon icon="plus"></nb-icon></button>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+                <td mat-cell *matCellDef="let element">
+                    <a mat-button (click)="navigate('companies/3')">{{element.name}}</a>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="country">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Country</th>
+                <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+            </ng-container>
+            <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+                <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+            </ng-container>
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+                <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </nb-card-body>
+    <nb-card-footer>
+        <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 15, 25]" showFirstLastButtons>
+        </mat-paginator>
+    </nb-card-footer>
+</nb-card>

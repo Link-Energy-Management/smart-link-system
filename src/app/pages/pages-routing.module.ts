@@ -20,8 +20,8 @@ const routes: Routes = [{
     },
     {
       path: 'contacts',
-      loadChildren: () => import('./layout/layout.module')
-        .then(m => m.LayoutModule),
+      loadChildren: () => import('./contacts/contacts.module')
+        .then(m => m.ContactsModule),
     },
     {
       path: 'electricity',

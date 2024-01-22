@@ -98,6 +98,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Contacts',
     icon: 'people-outline',
-    link: '/pages/iot-dashboard',
+    link: '/pages/contacts',
   },
 ];
