@@ -140,5 +140,13 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
   providers: [
     CountryOrdersMapService
   ],
+  exports: [
+    ProfitCardComponent,
+    WeatherComponent,
+    TemperatureComponent,
+    EarningCardComponent,
+    SolarComponent,
+    ContactsComponent
+  ]
 })
 export class DashboardModule { }

@@ -1,5 +1,5 @@
 <div class="display-flex-container">
-    <h1 mat-dialog-title class="flex-field">Account 1</h1>
+    <h1 mat-dialog-title class="flex-field">Moore International</h1>
     <button nbButton ghost (click)="toggleStar()">
         <nb-icon icon="star-outline" *ngIf="!isStarred"></nb-icon>
         <nb-icon icon="star" *ngIf="isStarred"></nb-icon>
@@ -19,7 +19,7 @@
 <div class="display-flex-container">
     <button nbButton ghost>
         <nb-icon icon="briefcase"></nb-icon>
-        <span>Company Name Inc.</span>
+        <span>Moore International</span>
     </button>
     <div>Created: 01 Jan, 2024</div>
 </div>
@@ -37,13 +37,14 @@
 <br>
 <nb-tabset>
     <nb-tab tabTitle="Summary">
-        <div class="content-margin-10 inline-flex-container">
-            <div class="flex-field">
+        <div class="row">
+            <div class="col col-sm-7">
                 <nb-card>
                     <nb-card-header>
                         Revenue
                     </nb-card-header>
                     <nb-card-body>
+                        <ngx-profit-card></ngx-profit-card>
                     </nb-card-body>
                 </nb-card>
                 <br>
@@ -52,6 +53,7 @@
                         Cost Savings
                     </nb-card-header>
                     <nb-card-body>
+                        <ngx-profit-card></ngx-profit-card>
                     </nb-card-body>
                 </nb-card>
                 <br>
@@ -60,38 +62,50 @@
                         Energy Use
                     </nb-card-header>
                     <nb-card-body>
+                        <ngx-profit-card></ngx-profit-card>
                     </nb-card-body>
                 </nb-card>
             </div>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <div class="right-content">
+            <div class="col">
                 <nb-card style="height: 500px;">
                     <nb-card-header>
                         Notes
                         <div class="spacer"></div>
-                        <button nbButton>
+                        <button nbButton ghost>
                             <nb-icon icon="plus"></nb-icon>
                         </button>
                     </nb-card-header>
                     <nb-card-body style="overflow-y: auto;">
                         <nb-card class="card-item">
                             <nb-card-body>Company Name Inc. has been a reliable client for the past few years,
-                                consistently engaging with our products and services. They have shown a strong interest
+                                consistently engaging with our products and services. They have shown a strong
+                                interest
                                 in our latest offerings, particularly in the areas of analytics and potential growth
                                 opportunities.</nb-card-body>
                         </nb-card>
-                        <br>
                         <nb-card class="card-item">
                             <nb-card-body>Company Name Inc. has been a reliable client for the past few years,
-                                consistently engaging with our products and services. They have shown a strong interest
+                                consistently engaging with our products and services. They have shown a strong
+                                interest
+                                in our latest offerings, particularly in the areas of analytics and potential growth
+                                opportunities.</nb-card-body>
+                        </nb-card>
+                        <nb-card class="card-item">
+                            <nb-card-body>Company Name Inc. has been a reliable client for the past few years,
+                                consistently engaging with our products and services. They have shown a strong
+                                interest
+                                in our latest offerings, particularly in the areas of analytics and potential growth
+                                opportunities.</nb-card-body>
+                        </nb-card>
+                        <nb-card class="card-item">
+                            <nb-card-body>Company Name Inc. has been a reliable client for the past few years,
+                                consistently engaging with our products and services. They have shown a strong
+                                interest
                                 in our latest offerings, particularly in the areas of analytics and potential growth
                                 opportunities.</nb-card-body>
                         </nb-card>
                     </nb-card-body>
                 </nb-card>
-                <br>
                 <nb-card style="height: 500px;">
                     <nb-card-header>
                         Emails Sent
@@ -106,7 +120,6 @@
                                 <span>Message: Attached below is your...</span>
                             </nb-card-body>
                         </nb-card>
-                        <br>
                         <nb-card class="card-item">
                             <nb-card-body style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
                                 <span>To: sales@companyname.com</span><br>
@@ -115,7 +128,6 @@
                                 <span>Message: Attached below is your...</span>
                             </nb-card-body>
                         </nb-card>
-                        <br>
                         <nb-card class="card-item">
                             <nb-card-body style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
                                 <span>To: sales@companyname.com</span><br>
@@ -124,7 +136,6 @@
                                 <span>Message: Attached below is your...</span>
                             </nb-card-body>
                         </nb-card>
-                        <br>
                         <nb-card class="card-item">
                             <nb-card-body style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
                                 <span>To: sales@companyname.com</span><br>
@@ -133,7 +144,6 @@
                                 <span>Message: Attached below is your...</span>
                             </nb-card-body>
                         </nb-card>
-                        <br>
                         <nb-card class="card-item">
                             <nb-card-body style="white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis;">
                                 <span>To: sales@companyname.com</span><br>
@@ -154,6 +164,32 @@
                     Pending Contracts
                 </nb-card-header>
                 <nb-card-body>
+                    <nb-card>
+                        <nb-card-header>Company Accounts</nb-card-header>
+                        <nb-card-body>
+                            <table mat-table [dataSource]="accounts">
+                                <!-- Define table columns -->
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                                    <td mat-cell *matCellDef="let account">{{ account.id }}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                                    <td mat-cell *matCellDef="let account">{{ account.name }}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="balance">
+                                    <th mat-header-cell *matHeaderCellDef>Balance</th>
+                                    <td mat-cell *matCellDef="let account">{{ account.balance | currency }}</td>
+                                </ng-container>
+
+                                <!-- Define table rows -->
+                                <tr mat-header-row *matHeaderRowDef="['id', 'name', 'balance']"></tr>
+                                <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'balance']"></tr>
+                            </table>
+                        </nb-card-body>
+                    </nb-card>
                 </nb-card-body>
             </nb-card>
             <br>
@@ -162,6 +198,32 @@
                     Open Contracts
                 </nb-card-header>
                 <nb-card-body>
+                    <nb-card>
+                        <nb-card-header>Company Accounts</nb-card-header>
+                        <nb-card-body>
+                            <table mat-table [dataSource]="accounts">
+                                <!-- Define table columns -->
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                                    <td mat-cell *matCellDef="let account">{{ account.id }}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                                    <td mat-cell *matCellDef="let account">{{ account.name }}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="balance">
+                                    <th mat-header-cell *matHeaderCellDef>Balance</th>
+                                    <td mat-cell *matCellDef="let account">{{ account.balance | currency }}</td>
+                                </ng-container>
+
+                                <!-- Define table rows -->
+                                <tr mat-header-row *matHeaderRowDef="['id', 'name', 'balance']"></tr>
+                                <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'balance']"></tr>
+                            </table>
+                        </nb-card-body>
+                    </nb-card>
                 </nb-card-body>
             </nb-card>
             <br>
@@ -170,6 +232,32 @@
                     Closed Contracts
                 </nb-card-header>
                 <nb-card-body>
+                    <nb-card>
+                        <nb-card-header>Company Accounts</nb-card-header>
+                        <nb-card-body>
+                            <table mat-table [dataSource]="accounts">
+                                <!-- Define table columns -->
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                                    <td mat-cell *matCellDef="let account">{{ account.id }}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                                    <td mat-cell *matCellDef="let account">{{ account.name }}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="balance">
+                                    <th mat-header-cell *matHeaderCellDef>Balance</th>
+                                    <td mat-cell *matCellDef="let account">{{ account.balance | currency }}</td>
+                                </ng-container>
+
+                                <!-- Define table rows -->
+                                <tr mat-header-row *matHeaderRowDef="['id', 'name', 'balance']"></tr>
+                                <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'balance']"></tr>
+                            </table>
+                        </nb-card-body>
+                    </nb-card>
                 </nb-card-body>
             </nb-card>
         </div>
@@ -181,6 +269,7 @@
                     Forecasting
                 </nb-card-header>
                 <nb-card-body>
+                    <ngx-weather></ngx-weather>
                 </nb-card-body>
             </nb-card>
             <br>
@@ -189,6 +278,7 @@
                     Meter Data Breakdown
                 </nb-card-header>
                 <nb-card-body>
+                    <ngx-solar></ngx-solar>
                 </nb-card-body>
             </nb-card>
             <br>
@@ -197,11 +287,12 @@
                     Cost Savings
                 </nb-card-header>
                 <nb-card-body>
+                    <ngx-earning-card></ngx-earning-card>
                 </nb-card-body>
             </nb-card>
         </div>
     </nb-tab>
-    <nb-tab tabTitle="Potential">
+    <!-- <nb-tab tabTitle="Potential">
         <div class="content-margin-10">
             <nb-card>
                 <nb-card-header>
@@ -216,237 +307,23 @@
                 </nb-card-body>
             </nb-card>
         </div>
-    </nb-tab>
+    </nb-tab> -->
     <nb-tab tabTitle="Contacts">
-        <div class="content-margin-10">
-            <nb-card>
-                <nb-card-header>
-                    Company
-                    <button nbButton ghost>
-                        <nb-icon icon="plus"></nb-icon><span>Add Company</span>
-                    </button>
-                </nb-card-header>
-                <mat-divider></mat-divider>
-                <nb-card-body>
-                    <nb-card class="card-item-full">
-                        <nb-card-header>
-                            Company Name Inc.
-                            <div class="spacer"></div>
-                            <button mat-icon-button [matMenuTriggerFor]="companyMenu">
-                                <mat-icon>more_horiz</mat-icon>
-                            </button>
-                            <mat-menu #companyMenu="matMenu" xPosition="before">
-                                <button mat-menu-item>
-                                    Remove
-                                </button>
-                            </mat-menu>
-                        </nb-card-header>
-                        <mat-divider></mat-divider>
-                        <nb-card-body>
-                            <mat-accordion class="headers-align">
-                                <mat-expansion-panel>
-                                    <mat-expansion-panel-header>
-                                        <mat-panel-title>
-                                            Contacts
-                                        </mat-panel-title>
-                                        <mat-panel-description>
-                                            <span>(3)</span>
-                                        </mat-panel-description>
-                                    </mat-expansion-panel-header>
-                                    <mat-list>
-                                        <mat-list-item>
-                                            <mat-icon matListItemIcon>person</mat-icon>
-                                            <div matListItemTitle>John Jones</div>
-                                            <div matListItemLine>Primary Contact</div>
-                                        </mat-list-item>
-                                        <mat-list-item>
-                                            <mat-icon matListItemIcon>person</mat-icon>
-                                            <div matListItemTitle>Sam Stark</div>
-                                            <div matListItemLine>Accounting</div>
-                                        </mat-list-item>
-                                        <mat-list-item>
-                                            <mat-icon matListItemIcon>person</mat-icon>
-                                            <div matListItemTitle>Xavier Copper</div>
-                                            <div matListItemLine>Manager</div>
-                                        </mat-list-item>
-                                    </mat-list>
-                                </mat-expansion-panel>
-                            </mat-accordion>
-                        </nb-card-body>
-                    </nb-card>
-                </nb-card-body>
-            </nb-card>
-            <br>
-            <nb-card>
-                <nb-card-header>
-                    Contacts
-                    <div class="spacer"></div>
-                    <button mat-raised-button color="primary">
-                        <mat-icon>add</mat-icon><span>Add Contact</span>
-                    </button>
-                </nb-card-header>
-                <mat-divider></mat-divider>
-                <nb-card-body>
-                    <nb-card class="card-item-full">
-                        <nb-card-header>
-                            John Jones
-                        </nb-card-header>
-                        <nb-card-body>
-                            <mat-list>
-                                <mat-list-item>
-                                    <mat-icon matListItemIcon>email</mat-icon>
-                                    <div matListItemTitle>jjones@company.com</div>
-                                </mat-list-item>
-                                <mat-list-item>
-                                    <mat-icon matListItemIcon>phone</mat-icon>
-                                    <div matListItemTitle>(321) 345-7890</div>
-                                </mat-list-item>
-                            </mat-list>
-                        </nb-card-body>
-                    </nb-card>
-                    <br>
-                    <nb-card class="card-item-full">
-                        <nb-card-header>
-                            Sam Stark
-                        </nb-card-header>
-                        <nb-card-body>
-                            <mat-list>
-                                <mat-list-item>
-                                    <mat-icon matListItemIcon>email</mat-icon>
-                                    <div matListItemTitle>jjones@company.com</div>
-                                </mat-list-item>
-                                <mat-list-item>
-                                    <mat-icon matListItemIcon>phone</mat-icon>
-                                    <div matListItemTitle>(321) 345-7890</div>
-                                </mat-list-item>
-                            </mat-list>
-                        </nb-card-body>
-                    </nb-card>
-                    <br>
-                    <nb-card class="card-item-full">
-                        <nb-card-header>
-                            Xavier Cooper
-                        </nb-card-header>
-                        <nb-card-body>
-                            <mat-list>
-                                <mat-list-item>
-                                    <mat-icon matListItemIcon>email</mat-icon>
-                                    <div matListItemTitle>jjones@company.com</div>
-                                </mat-list-item>
-                                <mat-list-item>
-                                    <mat-icon matListItemIcon>phone</mat-icon>
-                                    <div matListItemTitle>(321) 345-7890</div>
-                                </mat-list-item>
-                            </mat-list>
-                        </nb-card-body>
-                    </nb-card>
-                </nb-card-body>
-            </nb-card>
-        </div>
+        <ngx-contacts></ngx-contacts>
     </nb-tab>
     <nb-tab tabTitle="Documents">
-        <div class="content-margin-10">
-            <nb-card>
-                <nb-card-header>
-                    Agreements
-                    <div class="spacer"></div>
-                    <button mat-raised-button color="primary"><mat-icon>link</mat-icon><span>Link
-                            Document</span></button>
-                </nb-card-header>
-                <mat-divider></mat-divider>
-                <nb-card-body>
-                    <div class="inline-flex-container">
-                        <nb-card class="card-item">
-                            <nb-card-header>
-
-                                <button mat-button>
-                                    <mat-icon>description</mat-icon>
-                                    <span>Proposal</span>
-                                </button>
-
-                                <div class="spacer"></div>
-                                <button mat-icon-button [matMenuTriggerFor]="docMenu">
-                                    <mat-icon>more_vert</mat-icon>
-                                </button>
-                                <mat-menu #docMenu="matMenu" xPosition="before">
-                                    <button mat-menu-item>
-                                        <span>Edit</span>
-                                    </button>
-                                    <button mat-menu-item>
-                                        <span>Delete</span>
-                                    </button>
-                                </mat-menu>
-                            </nb-card-header>
-                            <nb-card-body>
-                            </nb-card-body>
-                        </nb-card>
-                        &nbsp;
-                        &nbsp;
-                        <nb-card class="card-item">
-                            <nb-card-header>
-
-                                <button mat-button>
-                                    <mat-icon>description</mat-icon>
-                                    <span>Agreement 1</span>
-                                </button>
-
-                                <div class="spacer"></div>
-                                <button mat-icon-button [matMenuTriggerFor]="docMenu">
-                                    <mat-icon>more_vert</mat-icon>
-                                </button>
-                                <mat-menu #docMenu="matMenu" xPosition="before">
-                                    <button mat-menu-item>
-                                        <span>Edit</span>
-                                    </button>
-                                    <button mat-menu-item>
-                                        <span>Delete</span>
-                                    </button>
-                                </mat-menu>
-                            </nb-card-header>
-                            <nb-card-body>
-                            </nb-card-body>
-                        </nb-card>
-                    </div>
-                </nb-card-body>
-            </nb-card>
-            <br>
-            <nb-card>
-                <nb-card-header>
-                    Other
-                    <div class="spacer"></div>
-                    <button mat-raised-button color="primary"><mat-icon>link</mat-icon><span>Link
-                            Document</span></button>
-                </nb-card-header>
-                <mat-divider></mat-divider>
-                <nb-card-body>
-                    <div class="inline-flex-container">
-                        <nb-card class="card-item">
-                            <nb-card-header>
-
-                                <button mat-button>
-                                    <mat-icon>description</mat-icon>
-                                    <span>Change Order</span>
-                                </button>
-
-                                <div class="spacer"></div>
-                                <button mat-icon-button [matMenuTriggerFor]="docMenu">
-                                    <mat-icon>more_vert</mat-icon>
-                                </button>
-                                <mat-menu #docMenu="matMenu" xPosition="before">
-                                    <button mat-menu-item>
-                                        <span>Edit</span>
-                                    </button>
-                                    <button mat-menu-item>
-                                        <span>Delete</span>
-                                    </button>
-                                </mat-menu>
-                            </nb-card-header>
-                            <nb-card-body>
-                            </nb-card-body>
-                        </nb-card>
-                    </div>
-                </nb-card-body>
-            </nb-card>
-        </div>
+        <nb-card>
+            <nb-card-header>
+                Agreements
+                <div class="spacer"></div>
+                <button nbButton ghost>
+                    <nb-icon icon="link-2"></nb-icon>
+                    <span>Link Document</span>
+                </button>
+            </nb-card-header>
+            <mat-divider></mat-divider>
+            <nb-card-body>
+            </nb-card-body>
+        </nb-card>
     </nb-tab>
 </nb-tabset>

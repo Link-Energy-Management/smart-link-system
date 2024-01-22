@@ -8,7 +8,11 @@ import { SnackbarService } from '../../../@core/utils/snackbar.service';
 })
 export class AccountDetailsComponent {
   isStarred: boolean = false;
-
+  accounts: any[] = [
+    { id: 1, name: 'Building XY-2', balance: 1000 },
+    { id: 2, name: 'Floor 5', balance: 2000 },
+    { id: 3, name: 'Site 12', balance: 3000 },
+  ];
   constructor(
     private snackbarService: SnackbarService
   ) {

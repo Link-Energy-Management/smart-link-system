@@ -19,6 +19,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { NbTagModule } from '@nebular/theme';
+import { ProfitCardComponent } from '../dashboard/profit-card/profit-card.component';
+import { DashboardModule } from '../dashboard/dashboard.module';
+import { StatsCardFrontComponent } from '../dashboard/profit-card/front-side/stats-card-front.component';
+import { StatsCardBackComponent } from '../dashboard/profit-card/back-side/stats-card-back.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,9 @@ import { NbTagModule } from '@nebular/theme';
     MatCardModule,
     MatDividerModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+
+    DashboardModule
   ]
 })
 export class ElectricityModule { }
