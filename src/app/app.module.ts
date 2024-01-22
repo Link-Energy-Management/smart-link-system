@@ -23,6 +23,7 @@ import { ThemeModule } from './@theme/theme.module';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
+import { AppCheckModule } from '@angular/fire/app-check';
 
 @NgModule({
   declarations: [AppComponent],
@@ -43,9 +44,11 @@ import { environment } from '../environments/environment';
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AppCheckModule,
     AngularFireAuthModule,
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule {
+
 }

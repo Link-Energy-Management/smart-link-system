@@ -12,20 +12,20 @@ export class EarningService extends EarningData {
   private pieChartData = [
     {
       value: 50,
-      name: 'Bitcoin',
+      name: 'Oil',
     },
     {
       value: 25,
-      name: 'Tether',
+      name: 'Power',
     },
     {
       value: 25,
-      name: 'Ethereum',
+      name: 'Natural Gas',
     },
   ];
 
   private liveUpdateChartData = {
-    bitcoin: {
+    oil: {
       liveChart: [],
       delta: {
         up: true,
@@ -33,7 +33,7 @@ export class EarningService extends EarningData {
       },
       dailyIncome: 45895,
     },
-    tether: {
+    power: {
       liveChart: [],
       delta: {
         up: false,
@@ -41,7 +41,7 @@ export class EarningService extends EarningData {
       },
       dailyIncome: 5862,
     },
-    ethereum: {
+    naturalGas: {
       liveChart: [],
       delta: {
         up: false,

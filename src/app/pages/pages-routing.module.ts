@@ -19,22 +19,22 @@ const routes: Routes = [{
         .then(m => m.CompaniesModule),
     },
     {
-      path: 'layout',
+      path: 'contacts',
       loadChildren: () => import('./layout/layout.module')
         .then(m => m.LayoutModule),
     },
     {
-      path: 'forms',
-      loadChildren: () => import('./forms/forms.module')
-        .then(m => m.FormsModule),
+      path: 'electricity',
+      loadChildren: () => import('./electricity/electricity.module')
+        .then(m => m.ElectricityModule),
     },
     {
-      path: 'ui-features',
+      path: 'gas',
       loadChildren: () => import('./ui-features/ui-features.module')
         .then(m => m.UiFeaturesModule),
     },
     {
-      path: 'modal-overlays',
+      path: 'carbon',
       loadChildren: () => import('./modal-overlays/modal-overlays.module')
         .then(m => m.ModalOverlaysModule),
     },

@@ -17,7 +17,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Accounts',
-        link: '/pages/layout/stepper',
+        link: '/pages/electricity/accounts',
       },
       {
         title: 'Long Term',

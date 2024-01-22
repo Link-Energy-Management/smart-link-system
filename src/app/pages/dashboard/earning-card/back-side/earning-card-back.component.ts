@@ -14,9 +14,9 @@ export class EarningCardBackComponent implements OnDestroy {
   name: string;
   color: string;
   value: number;
-  defaultSelectedCurrency: string = 'Bitcoin';
+  defaultSelectedCurrency: string = 'Oil';
 
-  constructor(private earningService: EarningData ) {
+  constructor(private earningService: EarningData) {
     this.earningService.getEarningPieChartData()
       .pipe(takeWhile(() => this.alive))
       .subscribe((earningPieChartData) => {
@@ -24,7 +24,7 @@ export class EarningCardBackComponent implements OnDestroy {
       });
   }
 
-  changeChartInfo(pieData: {value: number; name: string; color: any}) {
+  changeChartInfo(pieData: { value: number; name: string; color: any }) {
     this.value = pieData.value;
     this.name = pieData.name;
     this.color = pieData.color;
